@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis - NYC Crash Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="info.html">Info</a>
+        <a href="analysis.html">Analysis</a>
+    </div>
+
+    <div class="container">
+
+        <div class="title-section">
+            <h1>Crash Data Analysis</h1>
+            <p>Real data from NYC about where crashes happen</p>
+        </div>
+
+        
+        <div class="info-box">
+            <h2>Data Status</h2>
+            <div id="loadingMessage">
+                <p>Loading crash data from NYC...</p>
+            </div>
+            <div id="dataLoaded" class="hidden">
+                <p>Data loaded! Found 500 crash records.</p>
+            </div>
+          
+        </div>
+
+     
+        <div class="info-box">
+            <h2>View the Data</h2>
+            <div class="controls">
+                <select id="chartType">
+                    <option value="">Choose Chart Type</option>
+                    <option value="bar">Bar Chart</option>
+                    <option value="pie">Pie Chart</option>
+                </select>
+                <button onclick="showChart()" id="showButton">Show Chart</button>
+               
+            </div>
+        </div>
+
+        
+        <div class="chart-area">
+            <div id="noChart">
+                <h3>Select a chart type above to see the data!</h3>
+                <p>The chart will show how many crashes happened in each borough.</p>
+            </div>
+
+           
+            <div id="barChart" class="hidden">
+                <h3>Crashes by Borough - Bar Chart</h3>
+                <div class="bar-chart" id="barChartContainer">
+                    
+                </div>
+            </div>
+
+        
+            <div id="pieChart" class="hidden">
+                <h3>Crashes by Borough - Pie Chart</h3>
+                <div class="pie-chart" id="pieChartContainer"></div>
+                <div id="pieLegend"></div>
+            </div>
+        </div>
+
+       
+        <div id="stats" class="stats hidden">
+            <div class="stat-box">
+                <div class="stat-number" id="totalCrashes">0</div>
+                <div>Total Crashes</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="topBorough">-</div>
+                <div>Most Crashes</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="avgCrashes">0</div>
+                <div>Average per Borough</div>
+            </div>
+        </div>
+
+      
+        <div class="info-box" id="explanation">
+            <h2>What This Data Shows</h2>
+            <p id="explanationText">Load the data to see what the numbers mean!</p>
+        </div>
+    </div>
+
+   
+    <div class="footer">
+        <h3>NYC_Data_JackyC</h3>
+        <p>Contact: jackyc85@nycstudents.net</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

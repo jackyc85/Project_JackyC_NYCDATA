@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Info - NYC Crash Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="info.html">Info</a>
+        <a href="analysis.html">Analysis</a>
+    </div>
+
+   
+    <div class="container">
+        
+        <div class="title-section">
+            <h1>How to Use This Website</h1>
+            <p>Learn about the crash data and how to read the charts</p>
+        </div>
+
+        
+        <div class="info-box">
+            <h2>Interactive Map of NYC Crashes</h2>
+            <p>This map shows real crash locations in New York City. Each red dot is where a crash happened. You can zoom in and click on dots to see more details.</p>
+            <div id="map"></div>
+            <p>Map Controls: Use your mouse to zoom in or out and drag to move around the map. Click on red dots to see crash details.</p>
+        </div>
+
+       
+        <div class="info-box">
+            <h2>Crash Details Cards</h2>
+            <p>View detailed information about individual crashes. Each card shows crash details and includes a button to zoom to that crash location on the map above.</p>
+            
+            <div class="card-controls">
+                <label for="boroughFilter">Filter by Borough:</label>
+                <select id="boroughFilter" onchange="filterCards()">
+                    <option value="all">All Boroughs</option>
+                    <option value="BROOKLYN">Brooklyn</option>
+                    <option value="QUEENS">Queens</option>
+                    <option value="BRONX">Bronx</option>
+                    <option value="MANHATTAN">Manhattan</option>
+                    <option value="STATEN ISLAND">Staten Island</option>
+                </select>
+                <button onclick="loadFlashCards()" id="loadCardsButton">Load Flash Cards</button>
+            </div>
+            
+            <div id="flashCardsContainer">
+                <p id="cardsLoadingMessage">Click "Load Flash Cards" to see information about the crashes.</p>
+            </div>
+        </div>
+
+       
+        <div class="info-box">
+            <h2>Step 1: Understanding the Data</h2>
+            <p>The website shows data from New York City. Each crash report includes where the crash happened, when it happened, what caused the crash, and how many people were hurt.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Step 2: Reading the Charts</h2>
+            <p>Bar Chart: Shows crash numbers as bars. Taller bars mean more crashes.</p>
+            <p>Pie Chart: Shows crashes as pieces of a pie. Bigger pieces mean more crashes.</p>
+            <p>Both charts show the same information in different ways for the user to understand.</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Step 3: Using the Analysis Page</h2>
+            <p>First, go to the Analysis page</p>
+            <p>Wait for the data to load from NYC</p>
+            <p>Choose "Bar Chart" or "Pie Chart"</p>
+            <p>Click "Show Chart" to see the data</p>
+            <p>Look at the statistics below the chart</p>
+        </div>
+
+        <div class="info-box">
+            <h2>What You Will Learn</h2>
+            <p>Which borough has the most car crashes</p>
+            <p>Which borough has the fewest crashes</p>
+            <p>How crashes are spread across the city</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Tips for Reading Data</h2>
+            <p>Compare the numbers: Look at which borough has the highest and lowest numbers.</p>
+            <p>Think about why: Areas with more people usually have more crashes.</p>
+            <p>Look for patterns: Do certain boroughs always have similar crash numbers?</p>
+        </div>
+    </div>
+
+  
+    <div class="footer">
+        <h3>NYC_Data_JackyC</h3>
+        <p>Contact: jackyc85@nycstudents.net</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
